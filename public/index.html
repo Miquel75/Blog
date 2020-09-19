@@ -1,167 +1,34 @@
 <!DOCTYPE html>
-<html><head>
-	<meta name="generator" content="Hugo 0.75.1" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="R appliqué à l&#39;écologie">
-    <meta name="Author" content="Miquel Pons">
-    <meta name="keywords" content="hugo blog">
-    <link rel="stylesheet" href=/css/syntax.css>
-    <link rel="stylesheet" href=/css/style.css>
-    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-    <title>Je comprends R</title>
-  </head><body><aside id="sidenav">
-    <header>
-    
-        <a href=/><img src="/avatar.png" alt="avatar"></a>
-        
-    
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Je comprends R</title><link rel="stylesheet" href="/css/core.min.3072e9c288847eaa0671aba0c25fc181a253c580fa2d5e6f071bea3bd3ea5335f850db620a170bbfde32a25057f95258.css" integrity="sha384-MHLpwoiEfqoGcaugwl/BgaJTxYD6LV5vBxvqO9PqUzX4UNtiChcLv94yolBX&#43;VJY"><link rel="alternate" type="application/rss+xml" href="/index.xml" title="Je comprends R" /><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Je comprends R" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/avatar.png" alt /><span class="site name">Je comprends R</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/contact">Contact</a></nav></div></span></div></section><section id="content"><ul class="note list"><li class="item"><a class="note" href="/post/ajout-croisement-des-donnees/">
+            <p class="note title">Ajout/croisement des donnees</p><p class="note date">Thursday, September 17, 2020</p><p class="note content">Résumé de ce que ce script fait :- Charger les packages nécessaires et les données Ailerons- Récupèrer les données “paramètre environnementaux” sous format NetCDF dans la base de données choisi (ici NOAA)- Extraire les données du NetCDF et les visualiser sous forme de carte- Croiser les données “paramètres environnementaux” avec les données Ailerons
+Il suffit de modifier la date pour obtenir les données “paramètres environnementaux du jour que l’on souhaite”<span class="mldr">&mldr;</span></p></a></li><li class="item"><a class="note" href="/post/analyses-bivaries/">
+            <p class="note title">Analyses bivaries</p><p class="note date">Thursday, September 17, 2020</p><p class="note content">knitr::opts_chunk$set(echo = TRUE)R Markdown </p></a><p class="note labels"><a class="category" href="/categories/r/">R</a><a class="tag" href="/tags/analyses-multivari%C3%A9s/">analyses multivariés</a></p></li><li class="item"><a class="note" href="/post/analyses-multivaries/">
+            <p class="note title">Analyses multivaries</p><p class="note date">Thursday, September 17, 2020</p></a></li><li class="item"><a class="note" href="/post/analyses-univaries/">
+            <p class="note title">Analyses univariés</p><p class="note date">Thursday, September 17, 2020</p><p class="note content">knitr::opts_chunk$set(echo = TRUE)L&rsquo;analyse univarié est l&rsquo;analyse d&rsquo;une seule variable. C&rsquo;est de l&rsquo;analyse descriptive. En plus de summary utilisé précédemment, vous pouvez employer les fonctions suivantes.
+mean permet d&rsquo;obtenir la moyenne.
+Si l&rsquo;on prend le même jeu de donnée que précédemment.
+setwd (&quot;C:/Users/Miquel Pons/Desktop&quot;)table &lt;- read.table(&quot;poissons.txt&quot;, sep = &quot;;&quot;) On veut la moyenne de la variable profondeur &ldquo;Prof&rdquo;
+mean (table$Prof)sd permet d&rsquo;avoir l&rsquo;écart type qui donne une mesure de la dispersion des valeur.<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/r/">R</a><a class="tag" href="/tags/analyses-univari%C3%A9s/">analyses univariés</a><a class="tag" href="/tags/statistique-descriptives/">statistique descriptives</a><a class="tag" href="/tags/visualisation/">visualisation</a></p></li><li class="item"><a class="note" href="/post/donnees/">
+            <p class="note title">Données</p><p class="note date">Thursday, September 17, 2020</p><p class="note content">knitr::opts_chunk$set(echo = TRUE)knitr::opts_knit$set(root.dir = normalizePath(&quot;C:/Users/Miquel Pons/Desktop&quot;))Avant de pouvoir traiter vos données sur R, il est bon de paramétrer son repertoire de travail. Pour cela il faut indiquer à R dans quel dossier de votre ordinateur vous souhaitez travailler, un dossier ou vous avez préalablement mis vos données. setwd() est utilisé pour indiquer votre répertoire. On utilise getwd() pour afficher le répertoire dans lequel on se trouve. Il est encore plus propre de commencer un nouveau projet File -&gt; New Project<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/r/">R</a><a class="tag" href="/tags/importer/">importer</a><a class="tag" href="/tags/exporter/">exporter</a><a class="tag" href="/tags/manipuler/">manipuler</a><a class="tag" href="/tags/data/">data</a><a class="tag" href="/tags/donn%C3%A9es/">données</a></p></li><li class="item"><a class="note" href="/post/glm/">
+            <p class="note title">GLM</p><p class="note date">Thursday, September 17, 2020</p></a></li><li class="item"><a class="note" href="/post/les-bases/">
+            <p class="note title">Les Bases</p><p class="note date">Thursday, September 17, 2020</p><p class="note content">knitr::opts_chunk$set(echo = TRUE)Avant d&rsquo;entrer au coeur des tests statistiques, modèles et autres espiegleries, voici quelques bases qu&rsquo;il serait pratique d&rsquo;avoir. Ces bases seront survolés rapidement. Des liens seront proposer pour approndir et renforcer ces bases.
+ https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf  Lorsque vous avez une difficulté, une question, n&rsquo;hesitez pas à chercher la réponse sur internet. Beaucoup de blogs comme celui-ci et de forums répondent aux questions que vous vous posez.
+R Studio Pour commencer tous les document que vous lisez sur ce site sont créés à partir de R studio.<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/r/">R</a><a class="tag" href="/tags/rmarkdown/">rmarkdown</a><a class="tag" href="/tags/objets/">objets</a><a class="tag" href="/tags/op%C3%A9rations/">opérations</a><a class="tag" href="/tags/instructions/">instructions</a></p></li><li class="item"><a class="note" href="/post/2015-07-23-r-rmarkdown/">
+            <p class="note title">Blogdown</p><p class="note date">Thursday, July 23, 2015</p><p class="note content">#R blogdownblogdown::new_site() créer un nouveau site
+blogdown::serve_site() construit le site web
+blogdown::stop_server() ferme le site web
+blogdown::new_post()
+hugo-theme-iris-master
+Dans les files cliquer sur config.toml
+baseurl = &quot;/&quot;languageCode = &quot;en-us&quot;title = &quot;A Hugo website&quot;theme = &quot;hugo-theme-dimension-master&quot; #télécharger un theme https://themes.gohugo.io/, l&#39;enregistrer dans dossier theme et copier le titre du dossier icigoogleAnalytics = &quot;&quot;disqusShortname = &quot;&quot;ignoreFiles = [&quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]ssR MarkdownThis is an R Markdown document.<span class="mldr">&mldr;</span></p></a><p class="note labels"><a class="category" href="/categories/r/">R</a><a class="tag" href="/tags/r-markdown/">R Markdown</a><a class="tag" href="/tags/plot/">plot</a><a class="tag" href="/tags/regression/">regression</a></p></li></ul></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 Notepadium.</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p></div></section></body>
 
-    <a id="branding" href=/>
-        
-            Je comprends R
-        
-    </a>
-    </header>
-
-    <nav>
-        
-            		
-            <a href="/"
-                
-            >
-                <i class="fas fa-home fa-sm"></i>
-                <span>Accueil</span>
-            </a>
-        
-            		
-            <a href="/post"
-                
-            >
-                <i class="fas fa-keyboard fa-ms"></i>
-                <span>posts</span>
-            </a>
-        
-            		
-            <a href="/tags"
-                
-            >
-                <i class="fas fa-tags fa-ms"></i>
-                <span>tags</span>
-            </a>
-        
-            		
-            <a href="https://github.com/yourgithubusername23434"
-                
-                    target="_blank"
-                
-            >
-                <i class="fab fa-github fa-ms"></i>
-                <span>github</span>
-            </a>
-        
-            		
-            <a href="/contact"
-                
-            >
-                <i class="far fa-envelope"></i>
-                <span>contact</span>
-            </a>
-        
-    </nav>
-</aside>
-<main id="main">
-            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
-            <div class="content">
-    
-    
-    <div class="section"> 
-        <div class="section-title">recent</div> 
-        
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/ajout-croisement-des-donnees/">Ajout/croisement des donnees</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Sep 17 2020
-                
-                <br>
-                
-                </div>
-            </div>
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/analyses-bivaries/">Analyses bivaries</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Sep 17 2020
-                
-                <br>
-                
-                        <i class="fas fa-tags"></i> 
-                        Tags: analyses multivariés
-                
-                </div>
-            </div>
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/analyses-multivaries/">Analyses multivaries</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Sep 17 2020
-                
-                <br>
-                
-                </div>
-            </div>
-        
-            <div class="list-item">
-                <a class="entry-title" href="/post/analyses-univaries/">Analyses univariés</a>
-                
-                
-                <div class="meta">
-                
-                    <i class="far fa-calendar-alt"></i> Sep 17 2020
-                
-                <br>
-                
-                        <i class="fas fa-tags"></i> 
-                        Tags: analyses univariés, statistique descriptives, visualisation
-                
-                </div>
-            </div>
-        
-        </div>
-    
-
-    
-
-            </div><footer>
-<div class="footer-content">
-
-  <div class="contact-info">
-      
-          <div class="footer-mail">
-          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
-      
-      
-      <div class="footer-phone">
-          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
-      </div>
-      
-  </div>
-
-
-<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
-
-</div>
-</footer></main>
-    </body>
-    <script src=/js/navbutton.js></script>
 </html>

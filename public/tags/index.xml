@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Je comprends R</title>
     <link>/tags/</link>
     <description>Recent content in Tags on Je comprends R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>©2019 Notepadium.</copyright>
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>analyses multivariés</title>
       <link>/tags/analyses-multivari%C3%A9s/</link>
@@ -15,6 +19,7 @@
       
       <guid>/tags/analyses-multivari%C3%A9s/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -24,6 +29,7 @@
       
       <guid>/tags/analyses-univari%C3%A9s/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -33,6 +39,7 @@
       
       <guid>/tags/data/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -42,6 +49,7 @@
       
       <guid>/tags/donn%C3%A9es/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -51,6 +59,7 @@
       
       <guid>/tags/exporter/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -60,6 +69,7 @@
       
       <guid>/tags/importer/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -69,6 +79,7 @@
       
       <guid>/tags/instructions/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -78,6 +89,7 @@
       
       <guid>/tags/manipuler/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -87,6 +99,7 @@
       
       <guid>/tags/objets/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -96,6 +109,7 @@
       
       <guid>/tags/op%C3%A9rations/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -105,6 +119,7 @@
       
       <guid>/tags/rmarkdown/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -114,6 +129,7 @@
       
       <guid>/tags/statistique-descriptives/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -123,6 +139,7 @@
       
       <guid>/tags/visualisation/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -132,6 +149,7 @@
       
       <guid>/tags/plot/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -141,6 +159,7 @@
       
       <guid>/tags/r-markdown/</guid>
       <description></description>
+      
     </item>
     
     <item>
@@ -150,6 +169,7 @@
       
       <guid>/tags/regression/</guid>
       <description></description>
+      
     </item>
     
   </channel>

@@ -1,83 +1,11 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="R appliqué à l&#39;écologie">
-    <meta name="Author" content="Miquel Pons">
-    <meta name="keywords" content="hugo blog">
-    <link rel="stylesheet" href=/css/syntax.css>
-    <link rel="stylesheet" href=/css/style.css>
-    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
-    <title>Je comprends R</title>
-  </head><body><aside id="sidenav">
-    <header>
-    
-        <a href=/><img src="/avatar.png" alt="avatar"></a>
-        
-    
-
-    <a id="branding" href=/>
-        
-            Je comprends R
-        
-    </a>
-    </header>
-
-    <nav>
-        
-            		
-            <a href="/"
-                
-            >
-                <i class="fas fa-home fa-sm"></i>
-                <span>Accueil</span>
-            </a>
-        
-            		
-            <a href="/post"
-                
-            >
-                <i class="fas fa-keyboard fa-ms"></i>
-                <span>posts</span>
-            </a>
-        
-            		
-            <a href="/tags"
-                
-            >
-                <i class="fas fa-tags fa-ms"></i>
-                <span>tags</span>
-            </a>
-        
-            		
-            <a href="https://github.com/yourgithubusername23434"
-                
-                    target="_blank"
-                
-            >
-                <i class="fab fa-github fa-ms"></i>
-                <span>github</span>
-            </a>
-        
-            		
-            <a href="/contact"
-                
-            >
-                <i class="far fa-envelope"></i>
-                <span>contact</span>
-            </a>
-        
-    </nav>
-</aside>
-<main id="main">
-            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
-            <div class="content">
-    
-    <h1 id="title">Analyses univariés</h1>
-    
-      
-    <nav id="TableOfContents"></nav>
-    <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.75.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Analyses univariés&nbsp;&ndash;&nbsp;Je comprends R</title><link rel="stylesheet" href="/css/core.min.3072e9c288847eaa0671aba0c25fc181a253c580fa2d5e6f071bea3bd3ea5335f850db620a170bbfde32a25057f95258.css" integrity="sha384-MHLpwoiEfqoGcaugwl/BgaJTxYD6LV5vBxvqO9PqUzX4UNtiChcLv94yolBX&#43;VJY"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Analyses univariés" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/avatar.png" alt /><span class="site name">Je comprends R</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/contact">Contact</a></nav></div></span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Analyses univariés</h1><p class="article date">Thursday, September 17, 2020</p></section><article class="article markdown-body"><pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
 </code></pre><p>L&rsquo;analyse univarié est l&rsquo;analyse d&rsquo;une seule variable. C&rsquo;est de l&rsquo;analyse descriptive. En plus de <strong>summary</strong> utilisé précédemment, vous pouvez employer les fonctions suivantes.</p>
 <p><strong>mean</strong> permet d&rsquo;obtenir la moyenne.</p>
 <p>Si l&rsquo;on prend le même jeu de donnée que précédemment.</p>
@@ -144,43 +72,12 @@ boxplot(poissons$Prof)
 <pre><code class="language-{r" data-lang="{r">
 dotchart(as.matrix(table(poissons$Zone))) #étant donné que R attend une matrice pour ce graphique, il convient d'utiliser as.matrix afin de rentrer les valeurs sous forme de matrice
 
-</code></pre>
-    
-    <div class="nav-next-prev">
-        <div class="nav-prev">
-            
-                <a href="/post/donnees/"><i class="fas fa-chevron-left"></i></a>
-            
-        </div>
-        <a class="nav-top" href="#">top</i></a>
-        <div class="nav-next">
-            
-                <a href="/post/analyses-multivaries/"><i class="fas fa-chevron-right"></i></a>
-            
-        </div>
-    </div>
-    
+</code></pre></article><section class="article labels"><a class="category" href=/categories/r/>R</a><a class="tag" href=/tags/analyses-univari%C3%A9s/>analyses univariés</a><a class="tag" href=/tags/statistique-descriptives/>statistique descriptives</a><a class="tag" href=/tags/visualisation/>visualisation</a></section><section class="article author"><img class="avatar" src="/img/avatar.png" alt><p class="name">Miquel Pons</p><div class="bio">Marine Biologist</div><div class="details"><a class="item" href="https://github.com/XXX" target="_blank"><span class="iconfont icon-github"></span>&nbsp;XXX</a><a class="item" href="mailto:miquelpons@mail.fr" target="_blank"><span class="iconfont icon-email"></span>&nbsp;miquelpons@mail.fr</a></div>
+</section></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/analyses-multivaries/"><span class="iconfont icon-article"></span>Analyses multivaries</a></p><p><a class="link" href="/post/donnees/"><span class="iconfont icon-article"></span>Données</a></p></section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2019 Notepadium.</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p></div></section></body>
 
-            </div><footer>
-<div class="footer-content">
-
-  <div class="contact-info">
-      
-          <div class="footer-mail">
-          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
-      
-      
-      <div class="footer-phone">
-          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
-      </div>
-      
-  </div>
-
-
-<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
-
-</div>
-</footer></main>
-    </body>
-    <script src=/js/navbutton.js></script>
 </html>
