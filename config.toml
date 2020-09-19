@@ -44,7 +44,7 @@ pygmentsUseClasses=true
   [[menu.main]]
     name = "github"
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
-    url = "https://github.com/yourgithubusername23434"
+    url = "https://github.com/Miquel75/Blog/settings/access"
     weight = -5 
   [[menu.main]]
     name = "contact"
