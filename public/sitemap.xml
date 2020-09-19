@@ -1,32 +1,155 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>/post/ajout-croisement-des-donnees/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/analyses-bivaries/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/analyses-multivaries/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/analyses-multivari%C3%A9s/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/analyses-univaries/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/analyses-univari%C3%A9s/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/categories/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/data/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/donnees/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/donn%C3%A9es/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/exporter/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/glm/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/importer/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/instructions/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/les-bases/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/manipuler/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/objets/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/op%C3%A9rations/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/post/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/categories/r/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/rmarkdown/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/statistique-descriptives/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/visualisation/</loc><lastmod>2020-09-17T00:00:00+00:00</lastmod></url><url>
-    <loc>/contact/</loc><lastmod>2016-05-05T21:48:51-07:00</lastmod></url><url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc><lastmod>2015-07-23T21:13:14-05:00</lastmod></url><url>
-    <loc>/tags/plot/</loc><lastmod>2015-07-23T21:13:14-05:00</lastmod></url><url>
-    <loc>/tags/r-markdown/</loc><lastmod>2015-07-23T21:13:14-05:00</lastmod></url><url>
-    <loc>/tags/regression/</loc><lastmod>2015-07-23T21:13:14-05:00</lastmod></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/ajout-croisement-des-donnees/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/analyses-bivaries/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/analyses-multivaries/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/analyses-multivari%C3%A9s/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/analyses-univaries/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/analyses-univari%C3%A9s/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/donnees/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/donn%C3%A9es/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/exporter/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/glm/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/importer/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/instructions/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/les-bases/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/manipuler/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/objets/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/op%C3%A9rations/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rmarkdown/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/statistique-descriptives/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/visualisation/</loc>
+    <lastmod>2020-09-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/contact/</loc>
+    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/plot/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r-markdown/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/regression/</loc>
+    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+  </url>
+  
+</urlset>
