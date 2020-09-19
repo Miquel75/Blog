@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Je comprends R"
 copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-theme = "hugo-lithium"
+theme = "hugo-casper3-master"
 pygmentsUseClasses=true
 
 [params]
@@ -40,11 +40,6 @@ pygmentsUseClasses=true
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
     url = "https://github.com/yourgithubusername23434"
     weight = -6 
-  [[menu.main]]
-    name = "RSS"
-    pre = "<i class=\"fas fa-rss fa-ms\"></i>"
-    url = "/index.xml"
-    weight = -4 
   [[menu.main]]
     name = "contact"
     pre = "<i class=\"far fa-envelope\"></i>"
