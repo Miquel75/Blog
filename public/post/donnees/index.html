@@ -1,80 +1,94 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.75.1" />
-
-
-<title>Données - Je comprends R</title>
-<meta property="og:title" content="Données - Je comprends R">
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/fonts.css" media="all">
-<link rel="stylesheet" href="/css/main.css" media="all">
-
-
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="/" class="nav-logo">
-    <img src="/images/%3cnil%3e"
-         width=""
-         height=""
-         alt="">
-  </a>
-
-  <ul class="nav-links">
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R appliqué à l&#39;écologie">
+    <meta name="Author" content="Miquel Pons">
+    <meta name="keywords" content="hugo blog">
+    <link rel="stylesheet" href=/css/syntax.css>
+    <link rel="stylesheet" href=/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>Je comprends R</title>
+  </head><body><aside id="sidenav">
+    <header>
     
-    <li><a href="/">Accueil</a></li>
+        <a href=/><img src="/avatar.png" alt="avatar"></a>
+        
     
-    <li><a href="/post">posts</a></li>
+
+    <a id="branding" href=/>
+        
+            Je comprends R
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>Accueil</span>
+            </a>
+        
+            		
+            <a href="/post"
+                
+            >
+                <i class="fas fa-keyboard fa-ms"></i>
+                <span>posts</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="fas fa-tags fa-ms"></i>
+                <span>tags</span>
+            </a>
+        
+            		
+            <a href="https://github.com/yourgithubusername23434"
+                
+                    target="_blank"
+                
+            >
+                <i class="fab fa-github fa-ms"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/contact"
+                
+            >
+                <i class="far fa-envelope"></i>
+                <span>contact</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
     
-    <li><a href="/tags">tags</a></li>
+    <h1 id="title">Données</h1>
     
-    <li><a href="https://github.com/yourgithubusername23434">github</a></li>
-    
-    <li><a href="/index.xml">RSS</a></li>
-    
-    <li><a href="/contact">contact</a></li>
-    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#importer-de-données">Importer de données</a></li>
+        <li><a href="#exporter-de-données">Exporter de données</a></li>
+        <li><a href="#un-premier-coup-doeil">Un premier coup d&rsquo;oeil</a></li>
+        <li><a href="#manipulation-des-données">Manipulation des données</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
-
-      </header>
-
-
-<main class="content" role="main">
-
-  <article class="article">
-    
-    <span class="article-duration">4 min read</span>
-    
-
-    <h1 class="article-title">Données</h1>
-
-    
-    <span class="article-date">2020-09-17</span>
-    
-
-    <div class="article-content">
-      <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
+    <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
 
 knitr::opts_knit$set(root.dir = normalizePath(&quot;C:/Users/Miquel Pons/Desktop&quot;))
 </code></pre><p>Avant de pouvoir traiter vos données sur R, il est bon de paramétrer son repertoire de travail. Pour cela il faut indiquer à R dans quel dossier de votre ordinateur vous souhaitez travailler, un dossier ou vous avez préalablement mis vos données.  <strong>setwd()</strong> est utilisé pour indiquer votre répertoire. On utilise <strong>getwd()</strong> pour afficher le répertoire dans lequel on se trouve.
@@ -169,44 +183,42 @@ tally(group_by(table, Zone)) # nombre de lignes par Zone
 <li><a href="https://www.rdocumentation.org/packages/dplyr/versions/0.7.8">https://www.rdocumentation.org/packages/dplyr/versions/0.7.8</a></li>
 </ul>
 
-    </div>
-  </article>
-
-  
-
-
-</main>
-
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
-          </li>
-          <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
-          </li>
-        </ul>
-      </footer>
-
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="/post/glm/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a href="/post/analyses-univaries/"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
     </div>
     
 
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
+      
+      
+      <div class="footer-phone">
+          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
+      </div>
+      
+  </div>
 
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js//highlight.min.js"></script>
+<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
 
-
-
-<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-
-
-
-    
-<script src="/js/math-code.js"></script>
-<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
-    
-  </body>
+</div>
+</footer></main>
+    </body>
+    <script src=/js/navbutton.js></script>
 </html>
-
