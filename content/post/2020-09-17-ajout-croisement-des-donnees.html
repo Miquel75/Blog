@@ -1,0 +1,267 @@
+---
+title: Ajout/croisement des donnees
+author: ~
+date: '2020-09-17'
+slug: ajout-croisement-des-donnees
+categories: []
+tags: []
+---
+
+
+
+<p>Résumé de ce que ce script fait :
+- Charger les packages nécessaires et les données Ailerons
+- Récupèrer les données “paramètre environnementaux” sous format NetCDF dans la base de données choisi (ici NOAA)
+- Extraire les données du NetCDF et les visualiser sous forme de carte
+- Croiser les données “paramètres environnementaux” avec les données Ailerons</p>
+<p>Il suffit de modifier la date pour obtenir les données “paramètres environnementaux du jour que l’on souhaite”</p>
+<p><strong>On charge les packages et créer un dataframe des données d’observation</strong></p>
+<pre class="r"><code>library(ocedata)
+library(ncdf4)
+library(tidyverse)
+library(lubridate)
+library(oce)
+library(geosphere)
+library(marmap)
+library(stringr)
+
+setwd(&quot;C:/Users/Miquel Pons/Desktop/AIleron projet SP/data&quot;)
+
+FinalData&lt;-read.csv2(&quot;FinalData.csv&quot;,header=TRUE,sep=&#39;;&#39;)
+
+#Selectionner les données utiles pour faire les cartes
+FinalData_filt&lt;-FinalData %&gt;%
+ dplyr::select(1,CLEOBS, NOMCITE, X, Y, DATEDEBUT) 
+
+#supprimer les lignes avec valeurs manquantes
+FinalData_na &lt;- FinalData_filt %&gt;% drop_na(X,Y)
+
+#créer le df gps avec lon lat especes
+gps&lt;- data.frame(FinalData_na$X, FinalData_na$Y)
+colnames(gps)&lt;-c(&quot;lon&quot;, &quot;lat&quot;)
+head(gps)</code></pre>
+<pre><code>##         lon       lat
+## 1  4.053783 43.313578
+## 2 12.560772 34.463186
+## 3  4.168311 43.263792
+## 4  6.788664   43.2928
+## 5   8.84528  41.66694
+## 6  8.152222 41.716667</code></pre>
+<pre class="r"><code>## Récuper la bathymétrie avec marmap et get_depth
+#lon et lat en class numeric
+gps$lon&lt;-as.numeric(as.character(FinalData_na$X))
+gps$lat&lt;-as.numeric(as.character(FinalData_na$Y))
+
+#charger les données de bathy de la zone qui nous intéresse
+map &lt;- getNOAA.bathy(lon1 = -16, lon2 = 73,
+                     lat1 = -14, lat2 = 48,  resolution = 1, keep =T)
+
+lon&lt;-gps$lon
+lat&lt;-gps$lat
+gps_b&lt;-get.depth(map,x=lon, y=lat, locator=FALSE)
+head(gps_b)</code></pre>
+<pre><code>##         lon      lat depth
+## 1  4.053783 43.31358   -81
+## 2 12.560772 34.46319   -92
+## 3  4.168311 43.26379   -84
+## 4  6.788664 43.29280  -250
+## 5  8.845280 41.66694  -153
+## 6  8.152222 41.71667 -2418</code></pre>
+<p><strong>Récuperer les paramètres environnementaux issus de satellite</strong> <br>
+Après avoir regarder plusieurs possibilités (IFREMER, Copernicus, Medtrix), mon choix s’est porté sur NOAA. Il n’est pas nécessaire de se créer un compte, pas besoin de clef API, données disponibles sur page https, variété de données conséquentes, nom fiable.</p>
+<p>Pour ce script, je vais donc chercher à croiser les données d’observations obtenues par Ailerons disons le 22 juillet 2019 (au hasard), avec les données de température de surface (SST) enregistrées à la même date par la NOAA (National Oceanic and Atmospheric Administration).</p>
+<p>A savoir que ce procédé marchera avec d’autre bases de données, mais qu’il faudrait probablement quelques modifications pour le mettre en place.</p>
+<p><strong>Choisir les données de SST à télécharger en modifiant uniquement la date.</strong></p>
+<pre class="r"><code># on choisi une date, par exemple le 22 juillet 2019
+date = as.Date(&#39;2019-07-22&#39;)
+date</code></pre>
+<pre><code>## [1] &quot;2019-07-22&quot;</code></pre>
+<pre class="r"><code># objet date a utiliser pour le data_file
+date = format(date, &#39;%Y%m%d&#39;)
+# objet da à utiliser pour l&#39;URL
+da&lt;-substr(date, 1, 6)
+
+#on réécrit 
+data_url = paste0(&quot;https://www.ncei.noaa.gov/data/sea-surface-temperature-optimum-interpolation/v2.1/access/avhrr/&quot;,da,&quot;/&quot;)
+data_url</code></pre>
+<pre><code>## [1] &quot;https://www.ncei.noaa.gov/data/sea-surface-temperature-optimum-interpolation/v2.1/access/avhrr/201907/&quot;</code></pre>
+<pre class="r"><code>#on indique le fichier a télécharger
+data_file = paste0(&quot;oisst-avhrr-v02r01.&quot;, date, &quot;.nc&quot;)
+data_file</code></pre>
+<pre><code>## [1] &quot;oisst-avhrr-v02r01.20190722.nc&quot;</code></pre>
+<pre class="r"><code>#on télécharge le fichier ncdf, si jamais le fichier est déja téléchargé on imprime un message
+
+if(!file.exists(data_file)){
+        download.file(url = data_url, destfile = data_file)
+} else {
+        message(&#39;SST deja present dans votre repertoire :\n&#39;, data_file)
+}</code></pre>
+<p><strong>Une fois le fichier ncdf télécharger, il faut en extraire les données</strong></p>
+<pre class="r"><code>setwd(&quot;C:/Users/Miquel Pons/Desktop/AIleron projet SP/data&quot;)
+
+#Extraction des données
+
+# on extrait du ncdf4 file les données de lon lat et sst
+nc&lt;-nc_open(paste0(&quot;oisst-avhrr-v02r01.&quot;, date, &quot;.nc&quot;))
+#nom des variables que contient le ncdf
+names(nc$var)</code></pre>
+<pre><code>## [1] &quot;anom&quot; &quot;err&quot;  &quot;ice&quot;  &quot;sst&quot;</code></pre>
+<pre class="r"><code>#extraire longitude
+lon = ncvar_get(nc, &quot;lon&quot;)
+#extraire latitude
+lat = ncvar_get(nc, &quot;lat&quot;)
+#extraire sst
+sst = ncvar_get(nc, &quot;sst&quot;)
+
+# on ferme le nc
+nc_close(nc)</code></pre>
+<p><strong>Visualiser les données extraites sur une carte</strong></p>
+<pre class="r"><code>data(&quot;coastlineWorld&quot;)
+data(&quot;coastlineWorldFine&quot;)
+par(mar=c(2, 2, 1, 1))
+lonlim &lt;- c(-5, 30)
+latlim &lt;- c(34, 45)
+
+
+#sst = sst-273.149993896484, si sst en Kelvin
+
+#on prépare la map
+Zlim = c(15,30)
+
+#la palette de couleur en légende (scalebar)
+drawPalette(zlim = Zlim, 
+            col=oce.colorsJet, 
+            at = seq(16,30,2), 
+            pos = 4, 
+            drawTriangles = FALSE)
+#base de la map
+mapPlot(coastlineWorldFine, 
+        projection=&quot;+proj=moll&quot;,
+        col=&quot;lightgray&quot;, 
+        longitudelim=lonlim, 
+        latitudelim=latlim, 
+        clip = TRUE)
+
+#on ajoute la couche sst
+mapImage(longitude = lon,
+         latitude = lat, 
+         z = sst, 
+         zlim = Zlim,
+         filledContour = TRUE,
+         col = oceColorsJet(120))
+
+#redessine la terre
+mapPolygon(coastlineWorldFine, col=&quot;lightgray&quot;)
+
+#titre
+mtext(&quot;Carte des températures de surface en Mediterranée occidentale le 22/07/2019&quot;)</code></pre>
+<p><img src="/post/2020-09-17-ajout-croisement-des-donnees_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong>Pour croiser les données extraites NOAA avec les données ailerons on transforme les données ncdf en dataframe</strong></p>
+<pre class="r"><code>#Produire un data frame a partir d&#39;un nc
+
+#On ouvre le nc
+setwd(&quot;C:/Users/Miquel Pons/Desktop/AIleron projet SP/data&quot;)
+nc&lt;-nc_open(paste0(&quot;oisst-avhrr-v02r01.&quot;, date, &quot;.nc&quot;))
+
+#On indique le cadre qui nous intéresse ici méditérranée française
+lonIdx &lt;- which( lon &gt;= -5.00 &amp; lon &lt;= 30.00)
+latIdx &lt;- which( lat &gt;= 34.00 &amp; lat &lt;= 45.00)
+
+#on extrait les données sst dans ce cadre
+sst &lt;- ncvar_get(nc, &quot;sst&quot;)[lonIdx, latIdx]
+
+#on referme le ncdf
+nc_close(nc)
+
+#création dataframe lon lat
+grid &lt;- expand.grid(lon[lonIdx], lat[latIdx])
+class(grid)</code></pre>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>#création dataframe lon lat et sst
+df &lt;- data.frame(cbind(grid, as.vector(sst)))
+summary(df)</code></pre>
+<pre><code>##       Var1             Var2       as.vector.sst. 
+##  Min.   : 0.125   Min.   :34.12   Min.   :21.71  
+##  1st Qu.: 7.562   1st Qu.:36.81   1st Qu.:25.20  
+##  Median :15.000   Median :39.50   Median :25.74  
+##  Mean   :15.000   Mean   :39.50   Mean   :25.61  
+##  3rd Qu.:22.438   3rd Qu.:42.19   3rd Qu.:26.22  
+##  Max.   :29.875   Max.   :44.88   Max.   :28.46  
+##                                   NA&#39;s   :2231</code></pre>
+<pre class="r"><code>#on supprime les NA
+df&lt;-df %&gt;% drop_na()
+#on nomme les colonnes
+names(df) &lt;- c(&quot;lon&quot;,&quot;lat&quot;, &quot;sst&quot;)
+
+head(df)</code></pre>
+<pre><code>##      lon    lat   sst
+## 1 10.125 34.125 28.46
+## 2 10.375 34.125 28.14
+## 3 10.625 34.125 27.72
+## 4 10.875 34.125 27.35
+## 5 11.125 34.125 27.07
+## 6 11.375 34.125 26.90</code></pre>
+<pre class="r"><code>################################################</code></pre>
+<p><strong>On croise les données Ailerons avec notre nouveau dataframe de données NOAA</strong></p>
+<pre class="r"><code>##Croiser notre data frame du *date* (ici 22/07/2019) avec données ailerons du *date* ici (22/07/2019)
+
+#On charge les données ailerons dans un dataframe 
+
+gps&lt;- data.frame(FinalData_na$X, FinalData_na$Y, FinalData_na$NOMCITE, FinalData_na$DATEDEBUT )
+
+colnames(gps)&lt;-c(&quot;lon&quot;, &quot;lat&quot;, &quot;Espèce&quot;, &quot;date&quot;)
+head(gps)</code></pre>
+<pre><code>##         lon       lat          Espèce       date
+## 1  4.053783 43.313578 Mobula mobular  01/01/1964
+## 2 12.560772 34.463186 Mobula mobular  01/01/1976
+## 3  4.168311 43.263792 Mobula mobular  01/01/1990
+## 4  6.788664   43.2928 Mobula mobular  01/08/1997
+## 5   8.84528  41.66694 Mobula mobular  20/08/2001
+## 6  8.152222 41.716667 Mobula mobular  15/08/2003</code></pre>
+<pre class="r"><code>##selectionner données a notre date en reformatant la date
+
+gps&lt;-gps %&gt;% drop_na()
+dim(gps)</code></pre>
+<pre><code>## [1] 882   4</code></pre>
+<pre class="r"><code>Y&lt;-str_sub(date, 1,4)
+m&lt;-str_sub(date,5,6)
+d&lt;-str_sub(date, 7,8)
+
+date&lt;- paste0(d,&quot;/&quot;,m, &quot;/&quot;, Y)
+date</code></pre>
+<pre><code>## [1] &quot;22/07/2019&quot;</code></pre>
+<pre class="r"><code>#séléction des données à la date choisie
+gps_d&lt;-gps[gps$date == date,]
+gps_d$lon&lt;-as.numeric(gps_d$lon)
+gps_d$lat&lt;-as.numeric(gps_d$lat)
+
+#les valeurs lon lat de chaque dataframe ne correspondent pas exactement dans les différents dataframes
+#package geosphere a l&#39;intérêt de calculer les distances 
+#on créer une matrice de distance 
+#distVincentyEllipsoid considéré comme le mode de calcul le plus précis mais le plus lourd
+mat &lt;- distm(gps_d[,c(&#39;lon&#39;,&#39;lat&#39;)], df[,c(&#39;lon&#39;,&#39;lat&#39;)], fun=distVincentyEllipsoid)
+#assigner le sst à nos observation en fonction de la distance la plus courte
+#apply rend un array selon critères, MARGIN = 1 par ligne, which.min retourne valeur avec le minimum de distance
+gps_d$sst &lt;- df$sst[apply(mat, 1, which.min)]
+
+#on obtient le data_frame qui nous intéresse
+gps_d</code></pre>
+<pre><code>##          lon      lat            Espèce       date   sst
+## 192 6.616804 42.57373   Mobula mobular  22/07/2019 24.93
+## 193 6.550513 42.59744   Mobula mobular  22/07/2019 24.93
+## 228 7.043731 43.28202   Mobula mobular  22/07/2019 25.82
+## 229 7.591978 43.23972   Mobula mobular  22/07/2019 25.55
+## 230 7.517636 43.22222   Mobula mobular  22/07/2019 25.55
+## 239 7.304303 43.68463   Mobula mobular  22/07/2019 25.87
+## 542 7.591978 43.23972    Mobula mobular 22/07/2019 25.55
+## 543 7.545266 43.23154 Myliobatis aquila 22/07/2019 25.55
+## 544 7.517636 43.22222    Mobula mobular 22/07/2019 25.55
+## 545 7.191111 43.35194    Mobula mobular 22/07/2019 25.82
+## 546 6.351877 42.65343            Raies  22/07/2019 24.70
+## 547 6.657560 42.53237            Raies  22/07/2019 24.93
+## 548 6.616804 42.57373    Mobula mobular 22/07/2019 24.93
+## 549 6.550513 42.59744    Mobula mobular 22/07/2019 24.93
+## 550 7.043731 43.28202    Mobula mobular 22/07/2019 25.82
+## 733 6.512989 42.78939           Requins 22/07/2019 25.32
+## 734 3.127126 42.47821   Prionace glauca 22/07/2019 23.51</code></pre>
+<p>On obtient donc bien notre nouveau dataframe avec les données d’observation de la date choisie et une nouvelle colonne sst correspondant à la température de surface au point où l’observation a été faite.</p>
