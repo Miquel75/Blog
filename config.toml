@@ -1,0 +1,52 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Je comprends R"
+copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+theme = "npq-hugo-master"
+pygmentsUseClasses=true
+
+[params]
+  author = "Miquel Pons"
+  description = "R appliqué à l'écologie"
+  keywords = "hugo blog"
+  useAvatar = true
+  microBlogSection = "posts"
+  displayMicroBlog = false
+  displayRecent = true
+  recentMax = 4
+  mail = "miquelpons@hotmail.fr"
+  phone = "+336 51 59 55 95"
+  formspreeID = "yourformspreeID"
+
+
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    pre = "<i class=\"fas fa-home fa-sm\"></i>"
+    url = "/"
+    weight = -9 
+  [[menu.main]]
+    name = "posts"
+    pre = "<i class=\"fas fa-keyboard fa-ms\"></i>"
+    url = "/post"
+    weight = -8
+  [[menu.main]]
+    name = "tags"
+    pre = "<i class=\"fas fa-tags fa-ms\"></i>"
+    url = "/tags"
+    weight = -7 
+  [[menu.main]]
+    name = "github"
+    pre = "<i class=\"fab fa-github fa-ms\"></i>"
+    url = "https://github.com/yourgithubusername23434"
+    weight = -6 
+  [[menu.main]]
+    name = "RSS"
+    pre = "<i class=\"fas fa-rss fa-ms\"></i>"
+    url = "/index.xml"
+    weight = -4 
+  [[menu.main]]
+    name = "contact"
+    pre = "<i class=\"far fa-envelope\"></i>"
+    url = "/contact"
+    weight = -1 
