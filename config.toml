@@ -2,7 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Je comprends R"
 copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-theme = "npq-hugo-master"
+theme = "hugo-lithium"
 pygmentsUseClasses=true
 
 [params]
