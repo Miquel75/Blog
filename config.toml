@@ -1,47 +1,52 @@
 baseURL = "/"
-languageCode = "en-us"
 title = "Je comprends R"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-theme = "npq-hugo-master"
-pygmentsUseClasses=true
+theme = "hugo-notepadium-master"
+copyright = "©2019 Notepadium."
+languageCode = "zh-cn"
+hasCJKLanguage = true
+
+enableRobotsTXT = true
+
+# Enable Disqus
+#disqusShortname = "XXX"
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+[markup.highlight]
+codeFences = true
+noClasses = false
+
+[markup.goldmark.renderer]
+unsafe = true  # enable raw HTML in Markdown
 
 [params]
-  author = "Miquel Pons"
-  description = "R appliqué à l'écologie"
-  keywords = "hugo blog"
-  useAvatar = true
-  microBlogSection = "posts"
-  displayMicroBlog = false
-  displayRecent = true
-  recentMax = 4
-  mail = "miquelpons@hotmail.fr"
-  phone = "+336 51 59 55 95"
-  formspreeID = "yourformspreeID"
+style = "dark"  # default: auto. light: light theme, dark: dark theme, auto: based on system.
+dateFormat = "Monday, January 2, 2006"  # if unset, default is "2006-01-02"
+logo = "avatar.png"  # if you have a logo png
+slogan = ""
+license = ""  # CC License
+fullRss = false # Puts entire HTML post into rss 'description' tag. If unset, default is false.
+
+[params.comments]
+enable = true  # En/Disable comments globally, default: false. You can always enable comments on per page.
+
+[params.math]
+enable = false  # optional: true, false. Enable globally, default: false. You can always enable math on per page.
+use = "katex"  # option: "katex", "mathjax". default: "katex"
 
 
-[menu]
-  [[menu.main]]
-    name = "Accueil"
-    pre = "<i class=\"fas fa-home fa-sm\"></i>"
-    url = "/"
-    weight = -9 
-  [[menu.main]]
-    name = "posts"
-    pre = "<i class=\"fas fa-keyboard fa-ms\"></i>"
-    url = "/post"
-    weight = -8
-  [[menu.main]]
-    name = "tags"
-    pre = "<i class=\"fas fa-tags fa-ms\"></i>"
-    url = "/tags"
-    weight = -7 
-  [[menu.main]]
-    name = "github"
-    pre = "<i class=\"fab fa-github fa-ms\"></i>"
-    url = "https://github.com/yourgithubusername23434"
-    weight = -6 
-  [[menu.main]]
-    name = "contact"
-    pre = "<i class=\"far fa-envelope\"></i>"
-    url = "/contact"
-    weight = -1 
+[params.share]
+enable = false
+addThisId = ""
+inlineToolId = ""
+
+[params.nav]
+showCategories = true       # /categories/
+showTags = true             # /tags/
+
+# custom navigation items
+
+[[params.nav.custom]]
+title = "About"
+url = "/about"
