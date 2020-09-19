@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>données on Je comprends R</title>
     <link>/tags/donn%C3%A9es/</link>
     <description>Recent content in données on Je comprends R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/donn%C3%A9es/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <copyright>©2019 Notepadium.</copyright>
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/tags/donn%C3%A9es/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Données</title>
       <link>/post/donnees/</link>
@@ -15,6 +19,7 @@
       
       <guid>/post/donnees/</guid>
       <description>knitr::opts_chunk$set(echo = TRUE)knitr::opts_knit$set(root.dir = normalizePath(&amp;quot;C:/Users/Miquel Pons/Desktop&amp;quot;))Avant de pouvoir traiter vos données sur R, il est bon de paramétrer son repertoire de travail. Pour cela il faut indiquer à R dans quel dossier de votre ordinateur vous souhaitez travailler, un dossier ou vous avez préalablement mis vos données. setwd() est utilisé pour indiquer votre répertoire. On utilise getwd() pour afficher le répertoire dans lequel on se trouve. Il est encore plus propre de commencer un nouveau projet File -&amp;gt; New Project</description>
+      
     </item>
     
   </channel>
