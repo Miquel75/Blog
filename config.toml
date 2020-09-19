@@ -12,6 +12,8 @@ enableRobotsTXT = true
 
 # Google Analytics
 #googleAnalytics = "UA-123-45"
+[build.environment]
+  HUGO_VERSION = "0.60.1"
 
 [markup.highlight]
 codeFences = true
