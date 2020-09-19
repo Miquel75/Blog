@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R appliqué à l&#39;écologie">
+    <meta name="Author" content="Miquel Pons">
+    <meta name="keywords" content="hugo blog">
+    <link rel="stylesheet" href=/css/syntax.css>
+    <link rel="stylesheet" href=/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>Je comprends R</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=/><img src="/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=/>
+        
+            Je comprends R
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>Accueil</span>
+            </a>
+        
+            		
+            <a href="/post"
+                
+            >
+                <i class="fas fa-keyboard fa-ms"></i>
+                <span>posts</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="fas fa-tags fa-ms"></i>
+                <span>tags</span>
+            </a>
+        
+            		
+            <a href="https://github.com/yourgithubusername23434"
+                
+                    target="_blank"
+                
+            >
+                <i class="fab fa-github fa-ms"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/index.xml"
+                
+            >
+                <i class="fas fa-rss fa-ms"></i>
+                <span>RSS</span>
+            </a>
+        
+            		
+            <a href="/contact"
+                
+            >
+                <i class="far fa-envelope"></i>
+                <span>contact</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Analyses univariés</h1>
+    
+      
+    <nav id="TableOfContents"></nav>
+    <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
+</code></pre><p>L&rsquo;analyse univarié est l&rsquo;analyse d&rsquo;une seule variable. C&rsquo;est de l&rsquo;analyse descriptive. En plus de <strong>summary</strong> utilisé précédemment, vous pouvez employer les fonctions suivantes.</p>
+<p><strong>mean</strong> permet d&rsquo;obtenir la moyenne.</p>
+<p>Si l&rsquo;on prend le même jeu de donnée que précédemment.</p>
+<pre><code class="language-{r" data-lang="{r">
+setwd (&quot;C:/Users/Miquel Pons/Desktop&quot;)
+
+table &lt;- read.table(&quot;poissons.txt&quot;, sep = &quot;;&quot;) 
+
+</code></pre><p>On veut la moyenne de la variable profondeur &ldquo;Prof&rdquo;</p>
+<pre><code class="language-{r" data-lang="{r">
+mean (table$Prof)
+
+</code></pre><p><strong>sd</strong> permet d&rsquo;avoir l&rsquo;écart type qui donne une mesure de la dispersion des valeur.</p>
+<pre><code class="language-{r" data-lang="{r">
+sd (table$Prof)
+
+</code></pre><p><strong>min</strong> donne la valeur minimum.</p>
+<pre><code class="language-{r" data-lang="{r">
+min (table$Prof)
+
+</code></pre><p><strong>max</strong> donne la valeur maximum.</p>
+<pre><code class="language-{r" data-lang="{r">
+max (table$Prof)
+
+</code></pre><p><strong>range</strong> décrit l&rsquo;étendu de votre variable.</p>
+<pre><code class="language-{r" data-lang="{r">
+range (table$Prof)
+
+</code></pre><p><strong>median</strong> vous donne la médiane, la valeur permettant d&rsquo;avoir autant de valeurs supérieurs la médiane que inférieurs.</p>
+<pre><code class="language-{r" data-lang="{r">
+median (table$Prof)
+
+</code></pre><p><strong>quantile</strong> permet bien évidemment d&rsquo;obtenir les quantiles, des valeurs qui divisent les données en intervalles contenant le même nombre de données. Ils permettent donc une mesure de la répartition. Comme vous pouvez le constater, le quantile qui sépare les données en deux groupes (50%) est la médiane. Les valeurs de 25%, 50% et 75% sont appelés quartiles.</p>
+<pre><code class="language-{r" data-lang="{r">
+quantile (table$Prof)
+
+</code></pre><h1 id="visualisation">Visualisation</h1>
+<p><strong>hist</strong> permet d&rsquo;afficher un histogramme présentant la répartition d&rsquo;une variable continue.</p>
+<pre><code class="language-{r" data-lang="{r">
+hist (table$Prof)
+
+</code></pre><p><strong>table</strong> vous donne le nombre de lignes pour chaque valeur de votre variable. Ici vous pouvez constater qu&rsquo;il n&rsquo;est pas bon de nommer vos données &ldquo;table&rdquo; puisque cela peut porter a confusion. Nous allons donc créer un autre objet contenant table.</p>
+<pre><code class="language-{r" data-lang="{r">
+
+poissons &lt;- table
+
+table (poissons$Prof)
+
+plot (table(poissons$Prof))
+
+</code></pre><p><strong>pie</strong> permet d&rsquo;afficher un visuel de la répartition d&rsquo;une variable sous forme de camembert. Ce format est peu utilisé car est considéré peu intuitif visuellement pour bien voir les quantités. Cependant ça reste sympa pour des infographies ou des présentations.</p>
+<pre><code class="language-{r" data-lang="{r">
+pie (table(poissons$Zone))
+
+</code></pre><p><strong>plot(density())</strong> donne la densité d&rsquo;une variable quantitative.La fonction plot est la fonction général permettant la représentation graphique. Il y a beaucoup de différentes options qu&rsquo;il vous appartient de découvrir. Des exemples seront données par la suite.</p>
+<pre><code class="language-{r" data-lang="{r">
+plot(density(poissons$Prof))
+
+</code></pre><p><strong>boxplot</strong> affiche une représentation graphique de la répartition des valeurs d&rsquo;une variable quantitative que l&rsquo;on appelle boîte à moustache. SUr ce graphique les quartiles, valeurs permettant la répartitions des données en quantiles, sont représentés.</p>
+<pre><code class="language-{r" data-lang="{r">
+boxplot(poissons$Prof)
+
+</code></pre><p><strong>dotchart</strong></p>
+<pre><code class="language-{r" data-lang="{r">
+dotchart(as.matrix(table(poissons$Zone))) #étant donné que R attend une matrice pour ce graphique, il convient d'utiliser as.matrix afin de rentrer les valeurs sous forme de matrice
+
+</code></pre>
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="/post/donnees/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a href="/post/analyses-multivaries/"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
+      
+      
+      <div class="footer-phone">
+          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
+      </div>
+      
+  </div>
+
+
+<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=/js/navbutton.js></script>
+</html>

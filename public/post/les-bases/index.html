@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R appliqué à l&#39;écologie">
+    <meta name="Author" content="Miquel Pons">
+    <meta name="keywords" content="hugo blog">
+    <link rel="stylesheet" href=/css/syntax.css>
+    <link rel="stylesheet" href=/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>Je comprends R</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=/><img src="/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=/>
+        
+            Je comprends R
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>Accueil</span>
+            </a>
+        
+            		
+            <a href="/post"
+                
+            >
+                <i class="fas fa-keyboard fa-ms"></i>
+                <span>posts</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="fas fa-tags fa-ms"></i>
+                <span>tags</span>
+            </a>
+        
+            		
+            <a href="https://github.com/yourgithubusername23434"
+                
+                    target="_blank"
+                
+            >
+                <i class="fab fa-github fa-ms"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/index.xml"
+                
+            >
+                <i class="fas fa-rss fa-ms"></i>
+                <span>RSS</span>
+            </a>
+        
+            		
+            <a href="/contact"
+                
+            >
+                <i class="far fa-envelope"></i>
+                <span>contact</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Les Bases</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#les-vecteurs"><strong>Les vecteurs</strong></a></li>
+        <li><a href="#les-matrices"><strong>Les matrices</strong></a></li>
+        <li><a href="#les-tableaux"><strong>Les tableaux</strong></a></li>
+        <li><a href="#les-data-frame-">**Les data frame **</a></li>
+        <li><a href="#les-listes"><strong>Les listes</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
+</code></pre><p>Avant d&rsquo;entrer au coeur des tests statistiques, modèles et autres espiegleries, voici quelques bases qu&rsquo;il serait pratique d&rsquo;avoir. Ces bases seront survolés rapidement. Des liens seront proposer pour approndir et renforcer ces bases.</p>
+<ul>
+<li><a href="https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf">https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf</a></li>
+</ul>
+<p>Lorsque vous avez une difficulté, une question, n&rsquo;hesitez pas à chercher la réponse sur internet. Beaucoup de blogs comme celui-ci et de forums répondent aux questions que vous vous posez.</p>
+<h1 id="r-studio">R Studio</h1>
+<p>Pour commencer tous les document que vous lisez sur ce site sont créés à partir de R studio. Vous pouvez télécharger R Studio gratuitement sur <a href="https://rstudio.com/">https://rstudio.com/</a>. R Studio est un environnement de developpement libre pour R, permettant une prise en main plus facile, une écriture plus rapide, une visualition plus pratique. Cet environnement et divisé en 4 zones ; la zone d&rsquo;edition semblable à une IDE ou vous pouvez écrire votre script, la console ou s&rsquo;affiche les resultats, l&rsquo;affichage de l&rsquo;environnement avec les objets créés, une zone d&rsquo;affichage permettant de visualiser les graphiques, d&rsquo;obtenir l&rsquo;aide, de voir les packages installés, et naviguer parmis vos fichier.</p>
+<p>Pour apprendre a mieux utiliser R vous pouvez regarder les raccourcis dans tools - Keyboard shortcuts ou taper Alt + Shift + K. 
+Pour ce qui est de l&rsquo;installation et prise en main je vous conseille de chercher par vous même sur internet ou ce site.</p>
+<ul>
+<li><a href="https://statistique-et-logiciel-r.com/installer-logiciel-r-environnement-r-studio/">https://statistique-et-logiciel-r.com/installer-logiciel-r-environnement-r-studio/</a></li>
+</ul>
+<h1 id="r-markdown">R Markdown</h1>
+<p>Toutes les pages de ce site sont créés sur Rstudio en utilisant le package R Markdown. Markdown est un language permettant de baliser du texte avec des symboles (#, ```, **) afin de donner à votre document sortie une forme, des titres, des paragraphes, scripts de codes, resultats, graphiques etc..</p>
+<p>Pour l&rsquo;installer c&rsquo;est très simple.</p>
+<p><code>install.packages (&quot;rmarkdown&quot;)</code></p>
+<p>C&rsquo;est avec cette instruction que vous pouvez installer les packages nécessaires. Un package est un ensemble de fonctions vous permettant d&rsquo;effectuer une action. C&rsquo;est un bout de code écrit par quelqu&rsquo;un d&rsquo;autre que vous pouvez utiliser librement, en le paramétrant vous même grâce à des arguments. Chaque package est accompagné d&rsquo;une aide que vous pouvez regarder avec la fonction help, donnant des indications sur comment utiliser le package.</p>
+<pre><code class="language-{r" data-lang="{r">help(install.packages)
+</code></pre><ul>
+<li>Vous trouverez des informations concernant R Markdown directement sur <a href="http://rmarkdown.rstudio.com">http://rmarkdown.rstudio.com</a>.</li>
+<li>Une Cheat sheet (type de fiche) ici : <a href="https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></li>
+<li>Un peu plus d&rsquo;infos : <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a></li>
+<li>Un guide de prise en main : <a href="https://statistique-et-logiciel-r.com/guide-de-demarrage-en-r-markdown/">https://statistique-et-logiciel-r.com/guide-de-demarrage-en-r-markdown/</a></li>
+</ul>
+<h1 id="les-objets">Les objets</h1>
+<p>Lorsque l&rsquo;on utilise R on est amené a créer des objets. Ces objets peuvent être de différents types;</p>
+<h3 id="les-vecteurs"><strong>Les vecteurs</strong></h3>
+<p>Les vecteurs peuvent être des variables quantitatives(0.01), qualitatives (bleu, grand), ou logique (Vrai/Faux).</p>
+<pre><code class="language-{r" data-lang="{r">
+vec.quant &lt;- c(1, 0.04, 250)
+vec.quant
+vec.qual &lt;- c(&quot;bleu&quot;, &quot;rose&quot;, &quot;petit&quot;)
+vec.qual
+vec.log &lt;- c(&quot;TRUE&quot;, &quot;FALSE&quot;, &quot;TRUE&quot;)
+vec.log
+
+</code></pre><p>Pour extraire d&rsquo;une variable la partie qui nous interesse de la façon suivante : var[ ]</p>
+<pre><code class="language-{r" data-lang="{r">
+vec.qual[2]
+
+</code></pre><h3 id="les-matrices"><strong>Les matrices</strong></h3>
+<p>Les matrices sont des tableaux à deux dimensions, donc avec un format rectangulaire. 
+Vous lire le code suivant comme ceci : &quot; Je créé un objet nommé matrice. Cet objet et créé par la fonction matrix permettant de créé une matrice. Je décide que mes donnée seront de numéros allant de 1 à 12, répartis sur 4 lignes et  colonnes&quot;.</p>
+<pre><code class="language-{r" data-lang="{r">
+matrice &lt;- matrix(data = 1:12, nrow = 4, ncol = 3)
+matrice
+
+</code></pre><p>Il n&rsquo;est pas obligatoire d&rsquo;écrire dans votre code &ldquo;data&rdquo; &ldquo;nrow&rdquo; et &ldquo;ncol&rdquo;, vou pouvez directement mettre les données que vous voulez. Il est cependant plus clair pour vous et pour ceux qui auraient à utiliser votre code d&rsquo;indiquer à quoi correpondent ce chiffres.</p>
+<p>Comme pour toutes les fonctions vous pouvez regarder la page d&rsquo;aide <code>help(matrix)</code>. Vous y verrez par exemple que vou pouvez décider avec l&rsquo;argument &ldquo;byrow&rdquo; de rentrer vos données par colonne (comme dans l&rsquo;exemple précédent)  ou par ligne.</p>
+<pre><code class="language-{r" data-lang="{r">
+matrice &lt;- matrix(data = 1:12, nrow = 4, ncol = 3, byrow = TRUE)
+matrice
+
+</code></pre><p>POur extraire des données d&rsquo;une matrice c&rsquo;est simple, il suffit de donné la position de la donnée que l&rsquo;on souhaite afficher grace deux nombres.</p>
+<pre><code class="language-{r" data-lang="{r">
+matrice [2, 3]
+
+</code></pre><p>Indiquer une seule dimension, une seule valeur, nous affichera toute une ligne ou colonne.</p>
+<pre><code class="language-{r" data-lang="{r">
+matrice [2, ]
+
+</code></pre><h3 id="les-tableaux"><strong>Les tableaux</strong></h3>
+<p>Même principe que la matrice mais avec plus de deux dimensions.</p>
+<pre><code class="language-{r" data-lang="{r">
+tableau &lt;- array(data = 1:24, dim = c( 4, 3, 2))
+tableau
+
+</code></pre><h3 id="les-data-frame-">**Les data frame **</h3>
+<p>Probablement le format le plus utilisé pour regrouper les données de différents types</p>
+<pre><code class="language-{r" data-lang="{r">
+df &lt;- data.frame (vec.quant, vec.qual, vec.log)
+df
+
+</code></pre><p>Pour extraire des données d&rsquo;un data frame, il suffit de demander le numéro de la colonne, ou bien le nom du vecteur, de la variable.</p>
+<pre><code class="language-{r" data-lang="{r">
+df [, 1]
+
+df$vec.qual
+
+</code></pre><h3 id="les-listes"><strong>Les listes</strong></h3>
+<p>Très utilisés également pour regrouper différents types d&rsquo;objets. Les listes sont cependant plus flexible que les data frame puisque:</p>
+<ul>
+<li>les variables d&rsquo;une liste n&rsquo;ont pas besoin d&rsquo;être de la même longueur</li>
+<li>les éléments n&rsquo;ont pas besoin d&rsquo;être des vecteurs</li>
+<li>plusieurs variable peuvent avoir le même nom</li>
+</ul>
+<p>Pour les jeux de données classiques à deux dimensions les data frame sont très pratiques. Cependant si la structure est plus complexe la liste est adaptée.</p>
+<p>Vous pouvez nommer chaque vecteurs dans votre liste, ici V1&hellip;V4.</p>
+<pre><code class="language-{r" data-lang="{r">
+liste &lt;- list(V1 = vec.quant, V2 = vec.qual, V3= vec.log, V4 = letters[1:10])
+liste
+</code></pre><p>Puis extraire les données que vous voulez grâce au nom ou à la position cette fois en utilisant des doubles crochets. Si on utilise un simple crochet on obtiendra le résultat sous forme de liste ce qui peut rendre la manipulation des données moins facile. La fonction <strong>class</strong> permet de visualiser le type d&rsquo;objet auquel on a affaire.</p>
+<pre><code class="language-{r" data-lang="{r">
+liste$V1
+
+liste[[2]]
+
+liste[2]
+
+class(liste[[2]])
+
+class(liste[2])
+
+
+</code></pre><h1 id="opérations-de-base"><strong>Opérations de base</strong></h1>
+<p><code>+</code> pour l&rsquo;addition, <code>-</code> la soustraction, <code>/</code> la division, <code>*</code> la multiplication, <code>^</code> la puissance, <code>%/%</code> pour obtenir le quotient d&rsquo;une division, <code>%%</code> le reste d&rsquo;une division (10/3, le quotient c&rsquo;est 3 le reste 1), <code>&lt;</code> inferieur a, <code>&gt;</code> supérieur a,<code>==</code> égal a, <code>&lt;=</code> inférieur ou égal a, <code>!=</code> différent de, <code>x|y</code> x ou y, <code>x&amp;y</code> x et y.</p>
+<p>En savoir plus sur le site suivant :
+<a href="http://www.sthda.com/french/wiki/les-operateurs-arithmetiques-et-logiques">http://www.sthda.com/french/wiki/les-operateurs-arithmetiques-et-logiques</a></p>
+<h1 id="instructions-de-contrôle"><strong>Instructions de contrôle</strong></h1>
+<p>Les instructions de contrôle permettent de faciliter des opérations.</p>
+<p><strong>if</strong> permet de réaliser une opération en fonction d&rsquo;une condition</p>
+<pre><code class="language-{r" data-lang="{r">a &lt;- 10
+if (a &lt; 11) {
+  a = a + 1
+}
+
+a
+
+</code></pre><p><strong>else</strong> utilisé avec <strong>if</strong> permet de réaliser une opération dans le cas où les conditions du <strong>if</strong> ne sont pas conformes.</p>
+<pre><code class="language-{r" data-lang="{r">
+
+tot &lt;-  10
+
+if (tot &gt; 20) {
+    print(&quot;C'est plus !&quot;)
+} else {
+    print(&quot;C'est moins !&quot;)  
+}
+
+</code></pre><p><strong>for</strong> est très utile puisqu&rsquo;il permet de faire des boucles.</p>
+<pre><code class="language-{r" data-lang="{r">
+a &lt;- 10
+
+for (i in 1:10) {
+a &lt;- a + 1
+}
+
+a
+
+</code></pre><p><strong>while</strong> permet d&rsquo;exécuter une opération jusqu&rsquo;a ce qu&rsquo;une condition soit conforme.</p>
+<pre><code class="language-{r" data-lang="{r">a &lt;- 10
+while (a &lt; 15) {
+  a = a + 1
+}
+
+a
+
+</code></pre>
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="/post/2015-07-23-r-rmarkdown/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a href="/post/glm/"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
+      
+      
+      <div class="footer-phone">
+          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
+      </div>
+      
+  </div>
+
+
+<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=/js/navbutton.js></script>
+</html>

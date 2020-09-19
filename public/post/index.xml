@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Je comprends R</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Je comprends R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ajout/croisement des donnees</title>
+      <link>/post/ajout-croisement-des-donnees/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ajout-croisement-des-donnees/</guid>
+      <description>Résumé de ce que ce script fait :- Charger les packages nécessaires et les données Ailerons- Récupèrer les données “paramètre environnementaux” sous format NetCDF dans la base de données choisi (ici NOAA)- Extraire les données du NetCDF et les visualiser sous forme de carte- Croiser les données “paramètres environnementaux” avec les données Ailerons
+Il suffit de modifier la date pour obtenir les données “paramètres environnementaux du jour que l’on souhaite”</description>
+    </item>
+    
+    <item>
+      <title>Analyses bivaries</title>
+      <link>/post/analyses-bivaries/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/analyses-bivaries/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)R Markdown </description>
+    </item>
+    
+    <item>
+      <title>Analyses multivaries</title>
+      <link>/post/analyses-multivaries/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/analyses-multivaries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analyses univariés</title>
+      <link>/post/analyses-univaries/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/analyses-univaries/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)L&amp;rsquo;analyse univarié est l&amp;rsquo;analyse d&amp;rsquo;une seule variable. C&amp;rsquo;est de l&amp;rsquo;analyse descriptive. En plus de summary utilisé précédemment, vous pouvez employer les fonctions suivantes.
+mean permet d&amp;rsquo;obtenir la moyenne.
+Si l&amp;rsquo;on prend le même jeu de donnée que précédemment.
+setwd (&amp;quot;C:/Users/Miquel Pons/Desktop&amp;quot;)table &amp;lt;- read.table(&amp;quot;poissons.txt&amp;quot;, sep = &amp;quot;;&amp;quot;) On veut la moyenne de la variable profondeur &amp;ldquo;Prof&amp;rdquo;
+mean (table$Prof)sd permet d&amp;rsquo;avoir l&amp;rsquo;écart type qui donne une mesure de la dispersion des valeur.</description>
+    </item>
+    
+    <item>
+      <title>Données</title>
+      <link>/post/donnees/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/donnees/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)knitr::opts_knit$set(root.dir = normalizePath(&amp;quot;C:/Users/Miquel Pons/Desktop&amp;quot;))Avant de pouvoir traiter vos données sur R, il est bon de paramétrer son repertoire de travail. Pour cela il faut indiquer à R dans quel dossier de votre ordinateur vous souhaitez travailler, un dossier ou vous avez préalablement mis vos données. setwd() est utilisé pour indiquer votre répertoire. On utilise getwd() pour afficher le répertoire dans lequel on se trouve. Il est encore plus propre de commencer un nouveau projet File -&amp;gt; New Project</description>
+    </item>
+    
+    <item>
+      <title>GLM</title>
+      <link>/post/glm/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/glm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Les Bases</title>
+      <link>/post/les-bases/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/les-bases/</guid>
+      <description>knitr::opts_chunk$set(echo = TRUE)Avant d&amp;rsquo;entrer au coeur des tests statistiques, modèles et autres espiegleries, voici quelques bases qu&amp;rsquo;il serait pratique d&amp;rsquo;avoir. Ces bases seront survolés rapidement. Des liens seront proposer pour approndir et renforcer ces bases.
+ https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf  Lorsque vous avez une difficulté, une question, n&amp;rsquo;hesitez pas à chercher la réponse sur internet. Beaucoup de blogs comme celui-ci et de forums répondent aux questions que vous vous posez.
+R Studio Pour commencer tous les document que vous lisez sur ce site sont créés à partir de R studio.</description>
+    </item>
+    
+    <item>
+      <title>Blogdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>#R blogdownblogdown::new_site() créer un nouveau site
+blogdown::serve_site() construit le site web
+blogdown::stop_server() ferme le site web
+blogdown::new_post()
+hugo-theme-iris-master
+Dans les files cliquer sur config.toml
+baseurl = &amp;quot;/&amp;quot;languageCode = &amp;quot;en-us&amp;quot;title = &amp;quot;A Hugo website&amp;quot;theme = &amp;quot;hugo-theme-dimension-master&amp;quot; #télécharger un theme https://themes.gohugo.io/, l&amp;#39;enregistrer dans dossier theme et copier le titre du dossier icigoogleAnalytics = &amp;quot;&amp;quot;disqusShortname = &amp;quot;&amp;quot;ignoreFiles = [&amp;quot;\\.Rmd$&amp;quot;, &amp;quot;\\.Rmarkdown$&amp;quot;, &amp;quot;_files$&amp;quot;, &amp;quot;_cache$&amp;quot;]ssR MarkdownThis is an R Markdown document.</description>
+    </item>
+    
+  </channel>
+</rss>

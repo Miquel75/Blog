@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plot on Je comprends R</title>
+    <link>/tags/plot/</link>
+    <description>Recent content in plot on Je comprends R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate><atom:link href="/tags/plot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>#R blogdownblogdown::new_site() créer un nouveau site
+blogdown::serve_site() construit le site web
+blogdown::stop_server() ferme le site web
+blogdown::new_post()
+hugo-theme-iris-master
+Dans les files cliquer sur config.toml
+baseurl = &amp;quot;/&amp;quot;languageCode = &amp;quot;en-us&amp;quot;title = &amp;quot;A Hugo website&amp;quot;theme = &amp;quot;hugo-theme-dimension-master&amp;quot; #télécharger un theme https://themes.gohugo.io/, l&amp;#39;enregistrer dans dossier theme et copier le titre du dossier icigoogleAnalytics = &amp;quot;&amp;quot;disqusShortname = &amp;quot;&amp;quot;ignoreFiles = [&amp;quot;\\.Rmd$&amp;quot;, &amp;quot;\\.Rmarkdown$&amp;quot;, &amp;quot;_files$&amp;quot;, &amp;quot;_cache$&amp;quot;]ssR MarkdownThis is an R Markdown document.</description>
+    </item>
+    
+  </channel>
+</rss>

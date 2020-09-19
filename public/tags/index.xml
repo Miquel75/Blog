@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Je comprends R</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Je comprends R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>analyses multivariés</title>
+      <link>/tags/analyses-multivari%C3%A9s/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/analyses-multivari%C3%A9s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>analyses univariés</title>
+      <link>/tags/analyses-univari%C3%A9s/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/analyses-univari%C3%A9s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>données</title>
+      <link>/tags/donn%C3%A9es/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/donn%C3%A9es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exporter</title>
+      <link>/tags/exporter/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/exporter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>importer</title>
+      <link>/tags/importer/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/importer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>instructions</title>
+      <link>/tags/instructions/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/instructions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manipuler</title>
+      <link>/tags/manipuler/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/manipuler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>objets</title>
+      <link>/tags/objets/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/objets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opérations</title>
+      <link>/tags/op%C3%A9rations/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/op%C3%A9rations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rmarkdown</title>
+      <link>/tags/rmarkdown/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistique descriptives</title>
+      <link>/tags/statistique-descriptives/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/statistique-descriptives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualisation</title>
+      <link>/tags/visualisation/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/visualisation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plot</title>
+      <link>/tags/plot/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>/tags/r-markdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>/tags/regression/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

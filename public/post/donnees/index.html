@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R appliqué à l&#39;écologie">
+    <meta name="Author" content="Miquel Pons">
+    <meta name="keywords" content="hugo blog">
+    <link rel="stylesheet" href=/css/syntax.css>
+    <link rel="stylesheet" href=/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>Je comprends R</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=/><img src="/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=/>
+        
+            Je comprends R
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>Accueil</span>
+            </a>
+        
+            		
+            <a href="/post"
+                
+            >
+                <i class="fas fa-keyboard fa-ms"></i>
+                <span>posts</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="fas fa-tags fa-ms"></i>
+                <span>tags</span>
+            </a>
+        
+            		
+            <a href="https://github.com/yourgithubusername23434"
+                
+                    target="_blank"
+                
+            >
+                <i class="fab fa-github fa-ms"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/index.xml"
+                
+            >
+                <i class="fas fa-rss fa-ms"></i>
+                <span>RSS</span>
+            </a>
+        
+            		
+            <a href="/contact"
+                
+            >
+                <i class="far fa-envelope"></i>
+                <span>contact</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Données</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#importer-de-données">Importer de données</a></li>
+        <li><a href="#exporter-de-données">Exporter de données</a></li>
+        <li><a href="#un-premier-coup-doeil">Un premier coup d&rsquo;oeil</a></li>
+        <li><a href="#manipulation-des-données">Manipulation des données</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <pre><code class="language-{r" data-lang="{r">knitr::opts_chunk$set(echo = TRUE)
+
+knitr::opts_knit$set(root.dir = normalizePath(&quot;C:/Users/Miquel Pons/Desktop&quot;))
+</code></pre><p>Avant de pouvoir traiter vos données sur R, il est bon de paramétrer son repertoire de travail. Pour cela il faut indiquer à R dans quel dossier de votre ordinateur vous souhaitez travailler, un dossier ou vous avez préalablement mis vos données.  <strong>setwd()</strong> est utilisé pour indiquer votre répertoire. On utilise <strong>getwd()</strong> pour afficher le répertoire dans lequel on se trouve.
+Il est encore plus propre de commencer un nouveau projet File -&gt; New Project</p>
+<pre><code class="language-{r}" data-lang="{r}">
+setwd (&quot;C:/Users/Miquel Pons/Desktop&quot;)
+
+getwd()
+
+</code></pre><h3 id="importer-de-données">Importer de données</h3>
+<p>Si vos données sont sous format txt vous pouvez utiliser <strong>read.table</strong>. Très souvent les données sont enregistré sous format csv, dans ce cas la utilisez la fonction <strong>read.csv</strong> (si les données sont séparés par des virgules &ldquo;,&quot;) ou <strong>read.csv2</strong> ( si les données sont séparés par des points-virgules &ldquo;;&quot;) afin d&rsquo;importer vos données.</p>
+<pre><code class="language-{r" data-lang="{r">
+table &lt;- read.table(&quot;poissons.txt&quot;, sep = &quot;;&quot;) #créer un objet table contenant les données du tableau poisson.txt, l'argument &quot;sep&quot; indique que les colonnes sont séparés par des &quot;;&quot;
+
+</code></pre><p>Le tableau devrait s&rsquo;afficher sur RStudio et être disponible dans votre environment.</p>
+<h3 id="exporter-de-données">Exporter de données</h3>
+<p>Il est très facile d&rsquo;exporter ses données avec <strong>write.table</strong>, <strong>write.csv</strong> ou <strong>write.csv2</strong>.</p>
+<pre><code class="language-{r" data-lang="{r">
+write.csv2(table, &quot;poissons.csv&quot;) #créer un fichier csv nommé &quot;poissons.csv&quot; à partir du tableau &quot;table&quot; 
+
+</code></pre><h3 id="un-premier-coup-doeil">Un premier coup d&rsquo;oeil</h3>
+<p><strong>head</strong> affiche les 6 premières lignes de votre tableau <code>head(table)</code></p>
+<p><strong>tail</strong> affiche les 6 dernières lignes de votre tableau <code>tail(table)</code></p>
+<p><strong>dim</strong> affiche les dimensions de votre tableau de données</p>
+<pre><code class="language-{r" data-lang="{r">
+dim(table)
+
+</code></pre><p><strong>names</strong> affiche le nom des variables</p>
+<pre><code class="language-{r" data-lang="{r">
+names(table)
+
+</code></pre><p><strong>str</strong> affiche les types de variables</p>
+<pre><code class="language-{r" data-lang="{r">
+str(table)
+
+</code></pre><p><strong>summary</strong> affiche un résumé de vos données, donnant des informations utiles comme le compte des variables qualitatives, le minimum, maximum, médiane, moyenne des variable quantitatives.</p>
+<pre><code class="language-{r" data-lang="{r">
+summary(table[, 1:4]) 
+
+</code></pre><h3 id="manipulation-des-données">Manipulation des données</h3>
+<p>Le package <strong>tidyverse</strong> et son extension <strong>dplyr</strong> permet d&rsquo;utiliser des verbes pour manipuler votre tableau de données. Vous pouvez installer ces packages facilement <code>install.packages(&quot;dplyr&quot;)</code>. Parfois d&rsquo;autres packages seront nécessaire pour utiliser <strong>dplyr</strong>. Ils seront indiqués sur la console, il suffit alors de lire les eventuels erreurs qui s&rsquo;affichent et installer les packages manquant.</p>
+<p>Vous pouvez alors utiliser le vocabulaire de dplyr, après avoir compilé le package, pour manipuler votre base de données.</p>
+<p><strong>slice</strong> permet de selectionner une tranche choisit de votre tableau, par exemple la ligne 10</p>
+<pre><code class="language-{r" data-lang="{r">library(dplyr) #compiler le package
+
+slice (table, 10) #selectionner une tranche de données
+
+</code></pre><p><strong>filter</strong> permet de selectionner les données en fonction d&rsquo;un critère.</p>
+<pre><code class="language-{r" data-lang="{r">
+filter (table, Poulpe == 1) #selectionner le lignes ou la colonne Poulpe comporte 1
+
+</code></pre><p><strong>select</strong> permet de selectionner les colonnes d&rsquo;un tableau</p>
+<pre><code class="language-{r" data-lang="{r">
+select (table, Zone, Poulpe) #selectionner les colonnes Zone et Poulpe
+
+</code></pre><p><strong>rename</strong> permet de renommer les colonnes</p>
+<pre><code class="language-{r" data-lang="{r">
+rename (table, &quot;profondeur&quot; = Prof) #renommer Prof en profondeur
+
+</code></pre><p><strong>arrange</strong> permet d&rsquo;organiser le tableau en fonction d&rsquo;une ou pluieurs colonnes.</p>
+<pre><code class="language-{r" data-lang="{r">
+arrange (table, Prof) #reéorganise le tableau avec la colonne profondeur en ordre croissant
+
+arrange (table, desc(Prof)) #reéorganise le tableau avec la colonne profondeur en ordre décroissant
+
+</code></pre><p><strong>mutate</strong> permet de créer une nouvelle variable, une nouvelle colonne, à partir d&rsquo;une autre variable.</p>
+<pre><code class="language-{r" data-lang="{r">
+mutate (table, ceph = Poulpe + Seiche) #créer une colonne ceph correspondant à l'addition de la colonne Poulpe et de la colonne Seiche
+
+
+</code></pre><p><strong>group_by</strong> permet de regrouper des lignes en fonction de valeurs d&rsquo;une ou plusieurs colonnes. Il et utile par exemple pour appliquer les operations aux groupes de notre choix.</p>
+<pre><code class="language-{r" data-lang="{r">
+group_by (table, Zone) #regroupe les lignes en fonction de la Zone
+
+slice(group_by(table, Zone),1) #selectionne la premiere ligne de chaque groupe Zone
+
+
+</code></pre><p><strong>sample_n</strong> et <strong>sample_frac</strong> permettent d&rsquo;échantillonner vos données.</p>
+<pre><code class="language-{r" data-lang="{r">
+sample_n (table , 10) #selectionne 10 lignes au hasard
+sample_frac (table , 0.1) #selectionne 10% de l'échantillon au hasard
+
+</code></pre><p><strong>tally</strong> permet de compter le nombre de ligne par groupe</p>
+<pre><code class="language-{r" data-lang="{r">
+tally(table) # nombre de lignes dans le tableau
+tally(group_by(table, Zone)) # nombre de lignes par Zone
+
+</code></pre><p>Il existe encore d&rsquo;autre fonctions pour manipuler vos données. Si vous voulez explorer un peu plus <strong>dplyr</strong> vous pouvez visiter les sites suivants :</p>
+<ul>
+<li><a href="http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html">http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html</a></li>
+<li><a href="https://statistique-et-logiciel-r.com/initiation-a-la-manipulation-de-donnees-avec-le-package-dplyr/">https://statistique-et-logiciel-r.com/initiation-a-la-manipulation-de-donnees-avec-le-package-dplyr/</a></li>
+<li><a href="https://www.rdocumentation.org/packages/dplyr/versions/0.7.8">https://www.rdocumentation.org/packages/dplyr/versions/0.7.8</a></li>
+</ul>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="/post/glm/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a href="/post/analyses-univaries/"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="mailto:miquelpons@hotmail.fr">miquelpons@hotmail.fr</a> </div>
+      
+      
+      <div class="footer-phone">
+          <i class="fas fa-phone"></i> &#43;336 51 59 55 95 
+      </div>
+      
+  </div>
+
+
+<p class="copyright meta">Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=/js/navbutton.js></script>
+</html>
