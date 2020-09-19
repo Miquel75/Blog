@@ -32,6 +32,11 @@ pygmentsUseClasses=true
     url = "/post"
     weight = -8
   [[menu.main]]
+    name = "Catégories"
+    pre = "<i class=\"far fa-envelope\"></i>"
+    url = "/categories"
+    weight = -6 
+  [[menu.main]]
     name = "tags"
     pre = "<i class=\"fas fa-tags fa-ms\"></i>"
     url = "/tags"
@@ -40,7 +45,7 @@ pygmentsUseClasses=true
     name = "github"
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
     url = "https://github.com/yourgithubusername23434"
-    weight = -6 
+    weight = -5 
   [[menu.main]]
     name = "contact"
     pre = "<i class=\"far fa-envelope\"></i>"
