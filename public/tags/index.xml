@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Je comprends R</title>
+    <title>Tags on Je Comprends R</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Je comprends R</description>
+    <description>Recent content in Tags on Je Comprends R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>petitcouchon</title>
-      <link>/tags/petitcouchon/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/petitcouchon/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>analyses multivariés</title>
       <link>/tags/analyses-multivari%C3%A9s/</link>
@@ -122,6 +113,15 @@
       <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/statistique-descriptives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tagthecouchon</title>
+      <link>/tags/tagthecouchon/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tagthecouchon/</guid>
       <description></description>
     </item>
     

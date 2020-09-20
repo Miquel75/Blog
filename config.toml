@@ -1,53 +1,71 @@
 baseURL = "/"
-languageCode = "en-us"
-title = "Je comprends R"
+title = "Je Comprends R"
+author = "Miquel Pons"
 copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
-theme = "hugo-casper3-master"
-pygmentsUseClasses=true
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
 
+theme = "hugo-casper3-master"
 
 [params]
-  author = "Miquel Pons"
-  description = "R appliqué à l'écologie"
-  keywords = "hugo blog"
-  useAvatar = true
-  microBlogSection = "posts"
-  displayMicroBlog = false
-  displayRecent = true
-  recentMax = 4
+  facebook = "https://facebook.com"
+  twitter = "https://twitter.com"
+  github = "https://github.com/jonathanjanssens"
+  description = "R et biostatistiques appliqués à l'écologie"
+  mainSections = ["post"]
   mail = "miquelpons@hotmail.fr"
-  phone = "+336 51 59 55 95"
-  formspreeID = "yourformspreeID"
-
-
 [menu]
-  [[menu.main]]
-    name = "Accueil"
-    pre = "<i class=\"fas fa-home fa-sm\"></i>"
-    url = "/"
-    weight = -9 
-  [[menu.main]]
+    [[menu.main]]
     name = "posts"
     pre = "<i class=\"fas fa-keyboard fa-ms\"></i>"
     url = "/post"
     weight = -8
-  [[menu.main]]
+   [[menu.main]]
     name = "Catégories"
     pre = "<i class=\"far fa-envelope\"></i>"
     url = "/categories"
     weight = -6 
-  [[menu.main]]
-    name = "tags"
-    pre = "<i class=\"fas fa-tags fa-ms\"></i>"
-    url = "/tags"
-    weight = -7 
-  [[menu.main]]
+[[menu.main]]
     name = "github"
     pre = "<i class=\"fab fa-github fa-ms\"></i>"
     url = "https://github.com/Miquel75/Blog/settings/access"
     weight = -5 
-  [[menu.main]]
+ [[menu.main]]
     name = "contact"
     pre = "<i class=\"far fa-envelope\"></i>"
     url = "/contact"
     weight = -1 
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true

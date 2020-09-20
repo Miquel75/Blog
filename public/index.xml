@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Je comprends R</title>
+    <title>Je Comprends R</title>
     <link>/</link>
-    <description>Recent content on Je comprends R</description>
+    <description>Recent content on Je Comprends R</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>hihi</title>
-      <link>/post/hihi/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/hihi/</guid>
-      <description>The petit couchon quite like you. But it has a secret identity. Is the petitcouchon some kind of Boops boops ? Or the Bamboozle
-ps: I Like U &amp;lt;3</description>
-    </item>
-    
+    <lastBuildDate>Thu, 17 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ajout/croisement des donnees</title>
       <link>/post/ajout-croisement-des-donnees/</link>
@@ -86,6 +76,15 @@ mean (table$Prof)sd permet d&amp;rsquo;avoir l&amp;rsquo;écart type qui donne 
       <description>knitr::opts_chunk$set(echo = TRUE)Avant d&amp;rsquo;entrer au coeur des tests statistiques, modèles et autres espiegleries, voici quelques bases qu&amp;rsquo;il serait pratique d&amp;rsquo;avoir. Ces bases seront survolés rapidement. Des liens seront proposer pour approndir et renforcer ces bases.
  https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf  Lorsque vous avez une difficulté, une question, n&amp;rsquo;hesitez pas à chercher la réponse sur internet. Beaucoup de blogs comme celui-ci et de forums répondent aux questions que vous vous posez.
 R Studio Pour commencer tous les document que vous lisez sur ce site sont créés à partir de R studio.</description>
+    </item>
+    
+    <item>
+      <title>Petitcouchon</title>
+      <link>/post/2020-09-20-hihi/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2020-09-20-hihi/</guid>
+      <description>Dans ce &lt;strong&gt;post&lt;/strong&gt; nous nous interesseront aux petits couchons</description>
     </item>
     
     <item>
